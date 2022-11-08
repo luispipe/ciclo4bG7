@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "262188598510",
+    "project_id": "unleeg7-10106",
+    "storage_bucket": "unleeg7-10106.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262188598510:android:02e2e8179b75830c289fff",
+        "android_client_info": {
+          "package_name": "com.example.unleeg7"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262188598510-9o3j5cppbfg0p4ovivc5kgccbh3ibu3i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWt2Pct06nuIXF_WV4FfxsoQh24tb8i1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262188598510-9o3j5cppbfg0p4ovivc5kgccbh3ibu3i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
