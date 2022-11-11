@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
 import androidx.dynamicanimation.animation.DynamicAnimation.ViewProperty
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,13 +29,13 @@ class BooksFragment : Fragment() {
         adapter= BookAdapter(requireContext())
         recyclerBook.layoutManager= LinearLayoutManager(context)
         recyclerBook.adapter= adapter
-
+        observeData()
         return view
 
     }
 
     fun observeData(){
-        viewModel.fetchBookData().observe(viewLifecycleOwner,{
+        viewModel.fetchBookData().observe(viewLifecycleOwner, Observer{
             adapter.setListData(it)
             adapter.notifyDataSetChanged()
         })

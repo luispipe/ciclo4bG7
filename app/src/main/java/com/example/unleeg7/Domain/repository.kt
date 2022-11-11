@@ -14,7 +14,7 @@ class repository {
             for (document in result){
                 val title= document.getString("title")
                 val author= document.getString("author")
-                val price= document.getString("price")
+                val price= document.getLong("price")?.toInt()
                 val url= document.getString("url")
                 val book= books(title,author,price,url)
                 listData.add(book)

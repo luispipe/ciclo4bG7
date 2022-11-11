@@ -14,7 +14,7 @@ import com.example.unleeg7.Model.books
 import com.example.unleeg7.R
 import com.squareup.picasso.Picasso
 
-class BookAdapter(private val context: Context):RecyclerView.Adapter<BookAdapter.ViewHolder>(), Adapter {
+class BookAdapter(val context: Context):RecyclerView.Adapter<BookAdapter.ViewHolder>() {
     var bookList= mutableListOf<books>()
 
     fun setListData(data:MutableList<books>){
@@ -22,9 +22,9 @@ class BookAdapter(private val context: Context):RecyclerView.Adapter<BookAdapter
     }
 
     override fun onCreateViewHolder(ViewGroup: ViewGroup, i: Int): ViewHolder {
-        val view= LayoutInflater.from(ViewGroup.context).inflate(R.layout.card_view_book
+        val v= LayoutInflater.from(ViewGroup.context).inflate(R.layout.card_view_book
         ,ViewGroup,false)
-        return ViewHolder(view)
+        return ViewHolder(v)
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
@@ -38,41 +38,15 @@ class BookAdapter(private val context: Context):RecyclerView.Adapter<BookAdapter
 
 
    inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
-        fun binWew(books: books){
-            val img= itemView.findViewById<ImageView>(R.id.imgBook)
-            Picasso.get().load(books.url).into(img)
-            itemView.findViewById<TextView>(R.id.titleBook).text=books.title
-            itemView.findViewById<TextView>(R.id.authorBook).text=books.author
-            itemView.findViewById<TextView>(R.id.priceBook).text= books.price
+        fun binWew(book: books){
+
+            Picasso.get().load(book.url).into(itemView.findViewById<ImageView>(R.id.imgBook))
+            itemView.findViewById<TextView>(R.id.titleBook).text=book.title
+            itemView.findViewById<TextView>(R.id.authorBook).text=book.author
+            itemView.findViewById<TextView>(R.id.priceBook).text= book.price.toString()
 
         }
     }
 
-    override fun registerDataSetObserver(observer: DataSetObserver?) {
-        TODO("Not yet implemented")
-    }
 
-    override fun unregisterDataSetObserver(observer: DataSetObserver?) {
-        TODO("Not yet implemented")
-    }
-
-    override fun getCount(): Int {
-        TODO("Not yet implemented")
-    }
-
-    override fun getItem(position: Int): Any {
-        TODO("Not yet implemented")
-    }
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        TODO("Not yet implemented")
-    }
-
-    override fun getViewTypeCount(): Int {
-        TODO("Not yet implemented")
-    }
-
-    override fun isEmpty(): Boolean {
-        TODO("Not yet implemented")
-    }
 }
