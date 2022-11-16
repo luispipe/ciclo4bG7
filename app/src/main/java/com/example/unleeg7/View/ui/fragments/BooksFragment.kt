@@ -31,7 +31,6 @@ class BooksFragment : Fragment() {
         recyclerBook.adapter= adapter
         observeData()
         return view
-
     }
 
     fun observeData(){

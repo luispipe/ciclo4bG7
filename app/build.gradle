@@ -65,4 +65,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.airbnb.android:lottie:3.4.2'
 
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
+    //Añadimos la dependencia para OpenStreetMap
+    implementation 'org.osmdroid:osmdroid-android:6.1.10'
+
 }
