@@ -20,7 +20,7 @@ class SignUpActivity:AppCompatActivity() {
     lateinit var firebaseAuth: FirebaseAuth
 
     lateinit var databaseReference: DatabaseReference
-    //lateinit var database:FirebaseDatabase
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +28,7 @@ class SignUpActivity:AppCompatActivity() {
         setContentView(R.layout.activity_signup)
 
         firebaseAuth= Firebase.auth
-        //database= FirebaseDatabase.getInstance()
-        databaseReference= Firebase.database.reference
+        databaseReference= Firebase.database.reference.child("User")
 
         register= findViewById(R.id.register)
         val name= findViewById<EditText>(R.id.signupName)
@@ -49,7 +48,7 @@ class SignUpActivity:AppCompatActivity() {
         firebaseAuth.createUserWithEmailAndPassword(email,password)
             .addOnCompleteListener(this){
                 Task->if (Task.isSuccessful){
-                 val user=firebaseAuth.currentUser
+                val user=firebaseAuth.currentUser
                 val userdb=databaseReference.child(user?.uid.toString())
                 userdb.child("name").setValue(name)
                 userdb.child("birthDate").setValue(birth)
